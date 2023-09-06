@@ -66,31 +66,8 @@
           >
             {{ doc.excerpt }}
           </p>
-          <div
-            class="border-b-2 pb-8 border-typography_primary dark:border-typography_primary_dark flex flex-col md:flex-row items-center md:justify-between mt-12 md:mt-4"
-          >
-            <!-- Author -->
-            <div class="flex flex-row items-center justify-center">
-              <span class="blog-post-text text-lg leading-lg font-light"
-                >By
-                <a
-                  class="hover:underline italic"
-                  :href="doc.authorUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >{{ doc.author }}</a
-                ></span
-              >
-            </div>
-            <!-- Social Share -->
-            <div class="mt-6 md:mt-0">
-              <NavShareIcons
-                :headline="doc.headline"
-                :excerpt="doc.excerpt"
-                :path="doc._path + '/'"
-              />
-            </div>
-          </div>
+
+          <!-- Social Share -->
         </Section>
         <!-- Content -->
         <Section
@@ -122,15 +99,6 @@
               />
             </div>
             <!-- Related articles -->
-            <div
-              v-if="data?.surround?.filter((elem) => elem !== null)?.length > 0"
-              class="blog-aside-wrapper"
-            >
-              <BlogRelatedArticles
-                :surround="data?.surround"
-                class="blog-post-text"
-              />
-            </div>
           </aside>
         </Section>
         <!-- Scroll to top -->
@@ -176,18 +144,4 @@ const image =
   baseUrl + (data.value?.article?.socialImage.src || "/sample.webp");
 </script>
 
-<style scoped>
-.blog-aside {
-  @apply sticky;
-  top: calc(theme("spacing.nav") + 0.25rem);
-}
-.blog-aside-wrapper {
-  @apply flex flex-col border-t-2 border-b-2 border-typography_primary py-4;
-}
-.blog-post-text {
-  @apply text-typography_primary;
-}
-.separator {
-  @apply mx-1;
-}
-</style>
+<style scoped></style>
