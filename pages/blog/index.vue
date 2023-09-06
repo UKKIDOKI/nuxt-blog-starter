@@ -1,18 +1,16 @@
 <template>
   <main>
-    <Section id="main" class="!pt-0">
-      <ContentQuery
-        path="/blog"
-        :only="['headline', 'excerpt', 'date', 'tags', '_path', 'image']"
-        :sort="{
-          date: -1,
-        }"
-        :limit="blogCountLimit"
-        v-slot="{ data }"
-      >
-        <BlogList :data="data" />
-      </ContentQuery>
-    </Section>
+    <ContentQuery
+      path="/blog"
+      :only="['headline', 'excerpt', 'date', 'tags', '_path', 'image']"
+      :sort="{
+        date: -1,
+      }"
+      :limit="blogCountLimit"
+      v-slot="{ data }"
+    >
+      <BlogList :data="data" />
+    </ContentQuery>
   </main>
 </template>
 

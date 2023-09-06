@@ -2,73 +2,19 @@
   <main class="blog-post-text">
     <ContentDoc>
       <template v-slot="{ doc }">
-        <Section id="blog-title" type="header">
-          <div
-            class="border-t-2 pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-12 md:mb-8"
-          >
-            <!-- Breadcrumbs -->
-            <ol
-              itemscope
-              itemtype="https://schema.org/BreadcrumbList"
-              class="blog-breadcrumb"
-            >
-              <li
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <a itemprop="item" href="/">
-                  <span itemprop="name">Home</span></a
-                >
-                <meta itemprop="position" content="1" />
-              </li>
-              <li class="separator">/</li>
-              <li
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <a
-                  itemscope
-                  itemtype="https://schema.org/WebPage"
-                  itemprop="item"
-                  itemid="/blog/"
-                  href="/blog/"
-                >
-                  <span itemprop="name">Blog</span></a
-                >
-                <meta itemprop="position" content="2" />
-              </li>
-              <li class="separator">/</li>
-              <li
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
-              >
-                <span itemprop="name">{{ doc.headline }}</span>
-                <meta itemprop="position" content="3" />
-              </li>
-            </ol>
-            <!-- Publish date -->
-            <span
-              class="font-light text-typography_primary/75 dark:text-typography_primary_dark/75 mt-2 md:mt-0"
-              >{{ $formatDate(doc.date) }}</span
-            >
-          </div>
-          <!-- Headline -->
-          <h1
-            class="blog-post-text font-bold mb-4 md:mb-6 text-h3 leading-h3 md:text-h1 md:leading-h1 text-center md:text-left"
-          >
-            {{ doc.headline }}
-          </h1>
-          <p
-            class="blog-post-text mb-8 md:w-8/12 md:text-lg md:leading-lg text-center md:text-left"
-          >
-            {{ doc.excerpt }}
-          </p>
+        <!-- Headline -->
+        <h1
+          class="blog-post-text font-bold mb-4 md:mb-6 text-h3 leading-h3 md:text-h1 md:leading-h1 text-center md:text-left"
+        >
+          {{ doc.headline }}
+        </h1>
+        <p
+          class="blog-post-text mb-8 md:w-8/12 md:text-lg md:leading-lg text-center md:text-left"
+        >
+          {{ doc.excerpt }}
+        </p>
 
-          <!-- Social Share -->
-        </Section>
+        <!-- Social Share -->
         <!-- Content -->
         <Section
           id="main"
@@ -102,7 +48,6 @@
           </aside>
         </Section>
         <!-- Scroll to top -->
-        <NavScrollTopIcon />
       </template>
       <!-- Error in case not found -->
       <template #not-found>
